@@ -9,17 +9,17 @@
 
 @implementation ListTableView
 
-- (void)layoutSubviews {
-	[super layoutSubviews];
-
-	// 如果不相等就更新
-	if (!CGSizeEqualToSize(self.bounds.size, [self intrinsicContentSize])) {
-		[self invalidateIntrinsicContentSize];
-	}
-}
-
-- (CGSize)intrinsicContentSize {
-	return self.contentSize;
-}
+//- (void)layoutSubviews {
+//	[super layoutSubviews];
+//
+//	// 如果不相等就更新
+//	if (!CGSizeEqualToSize(self.bounds.size, [self intrinsicContentSize])) {
+//		[self invalidateIntrinsicContentSize];
+//	}
+//}
+//
+//- (CGSize)intrinsicContentSize {
+//	return self.contentSize;
+//}
 
 @end

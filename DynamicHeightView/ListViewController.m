@@ -25,16 +25,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	
-	self.view.backgroundColor = UIColor.orangeColor;
+	self.title = @"UITableView高度自适应";
 	
-//	UIView * redBackView = [UIView new];
-//	redBackView.backgroundColor = [UIColor redColor];
-//	[self.view addSubview:redBackView];
-//
-//	[redBackView mas_makeConstraints:^(MASConstraintMaker *make) {
-//		make.top.equalTo(self.view.mas_top).offset(100);
-//		make.left.right.equalTo(self.view);
-//	}];
+	self.view.backgroundColor = UIColor.orangeColor;
 	
 	[self.view addSubview:self.tableView];
 	[self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -45,6 +38,18 @@
 	lines = 2;
 	[self.tableView reloadData];
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"改变行数" style:UIBarButtonItemStyleDone target:self action:@selector(changeLines)];
+	
+	[self.tableView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+	if ([keyPath isEqualToString:@"contentSize"]) {
+		[self.tableView mas_remakeConstraints:^(MASConstraintMaker *make) {
+			make.left.right.equalTo(self.view);
+			make.top.equalTo(self.view.mas_top).offset(100);
+			make.height.equalTo(@(self.tableView.contentSize.height));
+		}];
+	}
 }
 
 - (void)changeLines{

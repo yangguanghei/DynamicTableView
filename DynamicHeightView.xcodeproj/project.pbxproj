@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		184ADC7425676FA800F8B441 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184ADC7325676FA800F8B441 /* ListViewController.m */; };
 		184ADC7A2567749D00F8B441 /* ListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184ADC792567749D00F8B441 /* ListTableView.m */; };
+		184ADC962567BDED00F8B441 /* DynamicCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184ADC952567BDED00F8B441 /* DynamicCellViewController.m */; };
 		B0AFAC4A255E5BBC00497829 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AFAC49255E5BBC00497829 /* AppDelegate.m */; };
 		B0AFAC50255E5BBC00497829 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AFAC4F255E5BBC00497829 /* ViewController.m */; };
 		B0AFAC53255E5BBC00497829 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B0AFAC51255E5BBC00497829 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		184ADC7325676FA800F8B441 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		184ADC782567749D00F8B441 /* ListTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListTableView.h; sourceTree = "<group>"; };
 		184ADC792567749D00F8B441 /* ListTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListTableView.m; sourceTree = "<group>"; };
+		184ADC942567BDED00F8B441 /* DynamicCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicCellViewController.h; sourceTree = "<group>"; };
+		184ADC952567BDED00F8B441 /* DynamicCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicCellViewController.m; sourceTree = "<group>"; };
 		36E1670C35080C351050EC61 /* Pods-DynamicHeightView.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DynamicHeightView.release.xcconfig"; path = "Target Support Files/Pods-DynamicHeightView/Pods-DynamicHeightView.release.xcconfig"; sourceTree = "<group>"; };
 		B0AFAC45255E5BBC00497829 /* DynamicHeightView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DynamicHeightView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B0AFAC48255E5BBC00497829 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -151,6 +154,8 @@
 				B0AFAC4F255E5BBC00497829 /* ViewController.m */,
 				184ADC7225676FA800F8B441 /* ListViewController.h */,
 				184ADC7325676FA800F8B441 /* ListViewController.m */,
+				184ADC942567BDED00F8B441 /* DynamicCellViewController.h */,
+				184ADC952567BDED00F8B441 /* DynamicCellViewController.m */,
 				184ADC782567749D00F8B441 /* ListTableView.h */,
 				184ADC792567749D00F8B441 /* ListTableView.m */,
 				B0AFAC83255E5C1D00497829 /* DynamicTableViewCell.h */,
@@ -343,6 +348,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				184ADC962567BDED00F8B441 /* DynamicCellViewController.m in Sources */,
 				184ADC7A2567749D00F8B441 /* ListTableView.m in Sources */,
 				B0AFAC91255E5C7500497829 /* DynamicCollectionView.m in Sources */,
 				B0AFACBE255E60B400497829 /* DynamicView.m in Sources */,
