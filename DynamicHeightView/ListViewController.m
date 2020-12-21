@@ -11,6 +11,8 @@
 
 #import "ListTableView.h"
 
+#import "SomeCellDynamicViewController.h"
+
 @interface ListViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
 	NSInteger lines;
@@ -69,6 +71,11 @@
 	UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass(UITableViewCell.class) forIndexPath:indexPath];
 	cell.backgroundColor = [UIColor greenColor];
 	return  cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	SomeCellDynamicViewController * vc = [SomeCellDynamicViewController new];
+	[self.navigationController pushViewController:vc animated:YES];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
