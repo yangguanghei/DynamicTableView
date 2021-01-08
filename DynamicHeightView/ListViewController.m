@@ -19,6 +19,8 @@
 }
 @property (nonatomic, strong) ListTableView *tableView;
 
+@property (nonatomic, strong) UILabel * label;
+
 @end
 
 @implementation ListViewController
@@ -42,6 +44,66 @@
 	self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"改变行数" style:UIBarButtonItemStyleDone target:self action:@selector(changeLines)];
 	
 	[self.tableView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+	
+	
+	UIView * superView = [UIView new];
+	[self.view addSubview:superView];
+	self.label = [UILabel new];
+	[superView addSubview:self.label];
+	self.label.numberOfLines = 0;
+	[superView mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(self.view.mas_left).offset(10);
+		make.right.equalTo(self.view.mas_right).offset(-10);
+		make.top.equalTo(self.tableView.mas_bottom).offset(30);
+	}];
+	[self.label mas_makeConstraints:^(MASConstraintMaker *make) {
+		make.left.equalTo(superView.mas_left).offset(10);
+		make.right.equalTo(superView.mas_right).offset(-10);
+		make.top.equalTo(superView.mas_top).offset(10);
+		make.bottom.equalTo(superView.mas_bottom).offset(-10);
+	}];
+	NSString * text = @"我是第一☝️我是第一☝️我是第一☝️我是第一☝️我是第一☝️我是第一☝️我是第一☝️";
+	self.label.text = text;
+	
+	superView.backgroundColor = [UIColor greenColor];
+	self.label.backgroundColor = [UIColor redColor];
+	
+	
+	NSMutableArray * mutableArr = [NSMutableArray arrayWithArray:self.navigationController.viewControllers];
+	int count = 0;
+	int first = 0;
+	for (int i = 0; i < self.navigationController.viewControllers.count; i ++) {
+		UIViewController * vc = self.navigationController.viewControllers[i];
+		if ([vc isKindOfClass:[ListViewController class]]) {
+			count ++;
+			if (count == 1) {
+				first = i;
+			}
+			if (count > 1) {
+				[mutableArr removeObjectAtIndex:first];
+				self.navigationController.viewControllers = mutableArr;
+				break;
+			}
+		}
+	}
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+	[super viewDidAppear:animated];
+	
+}
+
+- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
+	NSString * text = @"我是第一☝️我是第一☝️我是第一☝️我是第一☝️我是第一☝️我是第一☝️我是第一☝️";
+	NSString * text1 = @"你是第一☝️你是第一☝️你是第一☝️你是第一☝️你是第一☝️你是第一☝️你是第一☝️你是第一☝️你是第一☝️你是第一☝️你是第一☝️你是第一☝️你是第一☝️你是第一☝️";
+	if ([self.label.text isEqualToString:text]) {
+		self.label.text = text1;
+	} else {
+		self.label.text = text;
+	}
+	
+	ListViewController * vc = [ListViewController new];
+	[self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{

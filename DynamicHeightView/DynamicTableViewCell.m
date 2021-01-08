@@ -50,9 +50,7 @@
 }
 
 - (void)clickLbl:(UITapGestureRecognizer *)tap{
-	NSLog(@"xxx");
 	_hasSec = !_hasSec;
-
 	if (self.reloadBlock) {
 		self.reloadBlock();
 	}
@@ -64,8 +62,6 @@
 - (void)setDataArr:(NSArray *)dataArr {
     _dataArr = dataArr;
     self.dynamicView.dataArr = dataArr;
-    [self.dynamicView.collectionView reloadData];
-    [self.dynamicView.collectionView layoutIfNeeded];
 }
 
 #pragma mark - getter
@@ -73,7 +69,7 @@
 - (UILabel *)titleLabel {
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
-        _titleLabel.text = @"城市";
+        _titleLabel.text = @"点击改变数据源";
         _titleLabel.textAlignment = NSTextAlignmentLeft;
         _titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightRegular];
 		UITapGestureRecognizer * tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(clickLbl:)];

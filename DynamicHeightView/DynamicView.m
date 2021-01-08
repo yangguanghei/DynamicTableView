@@ -29,14 +29,26 @@ static NSString *identify = @"DynamicCollectionViewCell";
     [self addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.mas_equalTo(self);
-//		make.height.equalTo(@(0));
     }];
 	
 	self.collectionView.backgroundColor = [UIColor greenColor];
+	[self.collectionView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
 }
 
 - (void)setDataArr:(NSArray *)dataArr{
 	_dataArr = dataArr;
+	[self.collectionView reloadData];
+	[self.collectionView layoutIfNeeded];
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+	if ([keyPath isEqualToString:@"contentSize"]) {
+		CGFloat height = self.collectionView.contentSize.height;
+		[self.collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
+			make.left.right.top.bottom.mas_equalTo(self);
+			make.height.equalTo(@(height));
+		}];
+	}
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -86,6 +98,7 @@ static NSString *identify = @"DynamicCollectionViewCell";
         _collectionView.dataSource = self;
         _collectionView.showsHorizontalScrollIndicator = NO;
         [_collectionView registerClass:[DynamicCollectionViewCell class] forCellWithReuseIdentifier:identify];
+		
     }
     return _collectionView;
 }

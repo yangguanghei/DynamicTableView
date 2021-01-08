@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		184ADC7425676FA800F8B441 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184ADC7325676FA800F8B441 /* ListViewController.m */; };
 		184ADC7A2567749D00F8B441 /* ListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184ADC792567749D00F8B441 /* ListTableView.m */; };
-		184ADC962567BDED00F8B441 /* DynamicCellViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184ADC952567BDED00F8B441 /* DynamicCellViewController.m */; };
 		1876538525909E1400A18FDA /* SomeCellDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876538425909E1400A18FDA /* SomeCellDynamicViewController.m */; };
 		1876538B25909EC900A18FDA /* SomeDynamicTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876538A25909EC900A18FDA /* SomeDynamicTableViewCell.m */; };
 		B0AFAC4A255E5BBC00497829 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B0AFAC49255E5BBC00497829 /* AppDelegate.m */; };
@@ -49,8 +48,6 @@
 		184ADC7325676FA800F8B441 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		184ADC782567749D00F8B441 /* ListTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListTableView.h; sourceTree = "<group>"; };
 		184ADC792567749D00F8B441 /* ListTableView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListTableView.m; sourceTree = "<group>"; };
-		184ADC942567BDED00F8B441 /* DynamicCellViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DynamicCellViewController.h; sourceTree = "<group>"; };
-		184ADC952567BDED00F8B441 /* DynamicCellViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DynamicCellViewController.m; sourceTree = "<group>"; };
 		1876538325909E1400A18FDA /* SomeCellDynamicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeCellDynamicViewController.h; sourceTree = "<group>"; };
 		1876538425909E1400A18FDA /* SomeCellDynamicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SomeCellDynamicViewController.m; sourceTree = "<group>"; };
 		1876538925909EC900A18FDA /* SomeDynamicTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SomeDynamicTableViewCell.h; sourceTree = "<group>"; };
@@ -172,8 +169,6 @@
 				184ADC7225676FA800F8B441 /* ListViewController.h */,
 				184ADC7325676FA800F8B441 /* ListViewController.m */,
 				1876537D25909DF000A18FDA /* SomeCellDynamic */,
-				184ADC942567BDED00F8B441 /* DynamicCellViewController.h */,
-				184ADC952567BDED00F8B441 /* DynamicCellViewController.m */,
 				184ADC782567749D00F8B441 /* ListTableView.h */,
 				184ADC792567749D00F8B441 /* ListTableView.m */,
 				B0AFAC83255E5C1D00497829 /* DynamicTableViewCell.h */,
@@ -366,7 +361,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				184ADC962567BDED00F8B441 /* DynamicCellViewController.m in Sources */,
 				184ADC7A2567749D00F8B441 /* ListTableView.m in Sources */,
 				B0AFAC91255E5C7500497829 /* DynamicCollectionView.m in Sources */,
 				B0AFACBE255E60B400497829 /* DynamicView.m in Sources */,

@@ -15,7 +15,9 @@ static NSString *identify = @"DynamicTableViewCell";
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray * dataSource;
 @property (nonatomic, strong) NSArray *dataArr;
+@property (nonatomic, strong) NSArray * anotherArray;
 
 @end
 
@@ -39,25 +41,26 @@ static NSString *identify = @"DynamicTableViewCell";
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataArr.count;
+    return self.dataSource.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     DynamicTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identify];
-    cell.dataArr = self.dataArr[indexPath.row];
+    cell.dataArr = self.dataSource[indexPath.row];
 	__weak typeof(self) weakSelf = self;
 	cell.reloadBlock = ^{
-		self.dataArr = @[@[],
-						 @[@"重庆",@"武汉",@"贵阳",@"郑州",@"济南",@"西安",@"合肥",@"南京",@"南宁",@"太原",@"昆明",@"福州"],
-						 @[@"宁波",@"青岛",@"大连",@"珠海",@"厦门",@"上海",@"烟台"],
-						 @[@"成都",@"德阳",@"绵阳",@"遂宁",@"广元",@"内江",@"简阳",@"泸州",@"达州",@"巴中",@"广安",@"双流",@"射阳",@"温江",@"都江堰",@"金牛",@"高新",@"绵竹",@"武侯",@"郫县",@"彭州",@"龙泉驿",@"崇州",@"新津",@"邛崃",],
-						 @[@"金堂",@"金牛",@"内江",@"高新",@"合肥",@"合肥",@"合肥"],
-						 @[@"合肥",@"合肥",@"合肥",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明"],
-						 @[@"珠海",@"珠海",@"珠海",@"珠海",@"珠海",@"珠海",@"珠海"],
-						 @[@"绵阳",@"绵阳",@"绵阳",@"绵阳",@"绵阳",@"绵阳",@"绵阳"]];
+		if (weakSelf.dataSource.count != weakSelf.anotherArray.count) {
+			weakSelf.dataSource = weakSelf.anotherArray;
+		} else {
+			weakSelf.dataSource = weakSelf.dataArr;
+		}
 		[weakSelf.tableView reloadData];
 	};
     return  cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+	
 }
 
 #pragma mark - UITableViewDelegate
@@ -72,7 +75,6 @@ static NSString *identify = @"DynamicTableViewCell";
     if (!_tableView) {
         _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.mainScreen.bounds.size.width, UIScreen.mainScreen.bounds.size.height) style:UITableViewStylePlain];
         _tableView.backgroundColor = UIColor.whiteColor;
-//        _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.rowHeight = UITableViewAutomaticDimension;
@@ -84,11 +86,39 @@ static NSString *identify = @"DynamicTableViewCell";
     return _tableView;
 }
 
+- (NSArray *)dataSource{
+	if (_dataSource == nil) {
+		_dataSource = self.dataArr;
+	}
+	return _dataSource;
+}
+
 - (NSArray *)dataArr {
     if (!_dataArr) {
-        _dataArr = @[@[@"北京",@"上海",@"广州",@"深圳",@"杭州",@"成都",@"天津"],@[@"重庆",@"武汉",@"贵阳",@"郑州",@"济南",@"西安",@"合肥",@"南京",@"南宁",@"太原",@"昆明",@"福州"],@[@"宁波",@"青岛",@"大连",@"珠海",@"厦门",@"上海",@"烟台"],@[@"成都",@"德阳",@"绵阳",@"遂宁",@"广元",@"内江",@"简阳",@"泸州",@"达州",@"巴中",@"广安",@"双流",@"射阳",@"温江",@"都江堰",@"金牛",@"高新",@"绵竹",@"武侯",@"郫县",@"彭州",@"龙泉驿",@"崇州",@"新津",@"邛崃",],@[@"金堂",@"金牛",@"内江",@"高新",@"合肥",@"合肥",@"合肥"],@[@"合肥",@"合肥",@"合肥",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明"],@[@"珠海",@"珠海",@"珠海",@"珠海",@"珠海",@"珠海",@"珠海"],@[@"绵阳",@"绵阳",@"绵阳",@"绵阳",@"绵阳",@"绵阳",@"绵阳"]];
+        _dataArr = @[@[@"北京",@"上海",@"广州",@"深圳",@"杭州",@"成都",@"天津"],
+					 @[@"重庆",@"武汉",@"贵阳",@"郑州",@"济南",@"西安",@"合肥",@"南京",@"南宁",@"太原",@"昆明",@"福州"],
+					 @[@"宁波",@"青岛",@"大连",@"珠海",@"厦门",@"上海",@"烟台"],
+					 @[@"金堂",@"金牛",@"内江",@"高新",@"合肥",@"合肥",@"合肥"],
+					 @[@"合肥",@"合肥",@"合肥",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明",@"昆明"],
+					 @[@"珠海",@"珠海",@"珠海",@"珠海",@"珠海",@"珠海",@"珠海"],
+					 @[@"绵阳",@"绵阳",@"绵阳",@"绵阳",@"绵阳",@"绵阳",@"绵阳"]
+					];
     }
     return _dataArr;
 }
 
+- (NSArray *)anotherArray {
+	if (_anotherArray == nil) {
+		_anotherArray = @[@[@"😄", @"😄", @"😄"],
+						  @[@"😄", @"😄", @"😄"],
+						  @[@"😄", @"😄", @"😄"],
+						  @[@"😄", @"😄", @"😄"],
+						  @[@"😄", @"😄", @"😄"],
+						  @[@"😄", @"😄", @"😄"],
+						  @[@"😄", @"😄", @"😄"],
+						  @[@"😄", @"😄", @"😄"]
+						 ];
+	}
+	return _anotherArray;
+}
 @end

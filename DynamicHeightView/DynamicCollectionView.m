@@ -9,16 +9,16 @@
 
 @implementation DynamicCollectionView
 
-- (void)layoutSubviews {
-    [super layoutSubviews];
-
-    if (!CGSizeEqualToSize(self.bounds.size, [self intrinsicContentSize])) {
-        [self invalidateIntrinsicContentSize];
-    }
-}
-
-- (CGSize)intrinsicContentSize {
-    return self.contentSize;
-}
+//- (void)layoutSubviews {
+//    [super layoutSubviews];
+//
+//    if (!CGSizeEqualToSize(self.bounds.size, [self intrinsicContentSize])) {
+//        [self invalidateIntrinsicContentSize];
+//    }
+//}
+//
+//- (CGSize)intrinsicContentSize {
+//    return self.contentSize;
+//}
 
 @end
