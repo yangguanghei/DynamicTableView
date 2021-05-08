@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18430E952645343700CE6209 /* SizeFittingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18430E942645343700CE6209 /* SizeFittingViewController.m */; };
+		18430E9B2645354300CE6209 /* SizeFittingTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18430E9A2645354300CE6209 /* SizeFittingTableViewCell.m */; };
+		18430EA12645377F00CE6209 /* AutoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18430EA02645377F00CE6209 /* AutoTableViewCell.m */; };
 		184ADC7425676FA800F8B441 /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 184ADC7325676FA800F8B441 /* ListViewController.m */; };
 		184ADC7A2567749D00F8B441 /* ListTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 184ADC792567749D00F8B441 /* ListTableView.m */; };
 		1876538525909E1400A18FDA /* SomeCellDynamicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1876538425909E1400A18FDA /* SomeCellDynamicViewController.m */; };
@@ -44,6 +47,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18430E932645343700CE6209 /* SizeFittingViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SizeFittingViewController.h; sourceTree = "<group>"; };
+		18430E942645343700CE6209 /* SizeFittingViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SizeFittingViewController.m; sourceTree = "<group>"; };
+		18430E992645354300CE6209 /* SizeFittingTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SizeFittingTableViewCell.h; sourceTree = "<group>"; };
+		18430E9A2645354300CE6209 /* SizeFittingTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SizeFittingTableViewCell.m; sourceTree = "<group>"; };
+		18430E9F2645377F00CE6209 /* AutoTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AutoTableViewCell.h; sourceTree = "<group>"; };
+		18430EA02645377F00CE6209 /* AutoTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AutoTableViewCell.m; sourceTree = "<group>"; };
 		184ADC7225676FA800F8B441 /* ListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListViewController.h; sourceTree = "<group>"; };
 		184ADC7325676FA800F8B441 /* ListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ListViewController.m; sourceTree = "<group>"; };
 		184ADC782567749D00F8B441 /* ListTableView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ListTableView.h; sourceTree = "<group>"; };
@@ -168,6 +177,12 @@
 				B0AFAC4F255E5BBC00497829 /* ViewController.m */,
 				184ADC7225676FA800F8B441 /* ListViewController.h */,
 				184ADC7325676FA800F8B441 /* ListViewController.m */,
+				18430E932645343700CE6209 /* SizeFittingViewController.h */,
+				18430E942645343700CE6209 /* SizeFittingViewController.m */,
+				18430E992645354300CE6209 /* SizeFittingTableViewCell.h */,
+				18430E9A2645354300CE6209 /* SizeFittingTableViewCell.m */,
+				18430E9F2645377F00CE6209 /* AutoTableViewCell.h */,
+				18430EA02645377F00CE6209 /* AutoTableViewCell.m */,
 				1876537D25909DF000A18FDA /* SomeCellDynamic */,
 				184ADC782567749D00F8B441 /* ListTableView.h */,
 				184ADC792567749D00F8B441 /* ListTableView.m */,
@@ -362,15 +377,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				184ADC7A2567749D00F8B441 /* ListTableView.m in Sources */,
+				18430E952645343700CE6209 /* SizeFittingViewController.m in Sources */,
 				B0AFAC91255E5C7500497829 /* DynamicCollectionView.m in Sources */,
 				B0AFACBE255E60B400497829 /* DynamicView.m in Sources */,
 				1876538525909E1400A18FDA /* SomeCellDynamicViewController.m in Sources */,
 				1876538B25909EC900A18FDA /* SomeDynamicTableViewCell.m in Sources */,
 				184ADC7425676FA800F8B441 /* ListViewController.m in Sources */,
 				B0AFAC50255E5BBC00497829 /* ViewController.m in Sources */,
+				18430EA12645377F00CE6209 /* AutoTableViewCell.m in Sources */,
 				B0AFAC85255E5C1D00497829 /* DynamicTableViewCell.m in Sources */,
 				B0AFAC4A255E5BBC00497829 /* AppDelegate.m in Sources */,
 				B0AFAC8B255E5C2F00497829 /* DynamicCollectionViewCell.m in Sources */,
+				18430E9B2645354300CE6209 /* SizeFittingTableViewCell.m in Sources */,
 				B0AFAC5B255E5BBE00497829 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -546,7 +564,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2J37V6P33X;
+				DEVELOPMENT_TEAM = N4686HA3AU;
 				INFOPLIST_FILE = DynamicHeightView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -568,7 +586,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 2J37V6P33X;
+				DEVELOPMENT_TEAM = N4686HA3AU;
 				INFOPLIST_FILE = DynamicHeightView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
 				LD_RUNPATH_SEARCH_PATHS = (

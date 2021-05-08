@@ -12,6 +12,7 @@
 #import "ListTableView.h"
 
 #import "SomeCellDynamicViewController.h"
+#import "SizeFittingViewController.h"
 
 @interface ListViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
@@ -136,8 +137,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-	SomeCellDynamicViewController * vc = [SomeCellDynamicViewController new];
-	[self.navigationController pushViewController:vc animated:YES];
+	NSInteger row = indexPath.row;
+	if (row == 0) {
+		SizeFittingViewController * vc = [SizeFittingViewController new];
+		[self.navigationController pushViewController:vc animated:YES];
+	} else {
+		SomeCellDynamicViewController * vc = [SomeCellDynamicViewController new];
+		[self.navigationController pushViewController:vc animated:YES];
+	}
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
