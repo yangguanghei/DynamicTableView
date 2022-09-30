@@ -52,8 +52,8 @@
 		_tableView.backgroundColor = UIColor.whiteColor;
 		_tableView.delegate = self;
 		_tableView.dataSource = self;
-		_tableView.estimatedRowHeight = 200;
-		_tableView.rowHeight = UITableViewAutomaticDimension;
+		_tableView.estimatedRowHeight = 120;
+//		_tableView.rowHeight = UITableViewAutomaticDimension;
 		[_tableView registerClass:[SizeFittingTableViewCell class] forCellReuseIdentifier:NSStringFromClass(SizeFittingTableViewCell.class)];
 		[_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:NSStringFromClass(UITableViewCell.class)];
 	}

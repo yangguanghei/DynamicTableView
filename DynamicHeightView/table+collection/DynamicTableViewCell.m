@@ -20,6 +20,13 @@
 
 @implementation DynamicTableViewCell
 
+- (CGSize)systemLayoutSizeFittingSize:(CGSize)targetSize withHorizontalFittingPriority:(UILayoutPriority)horizontalFittingPriority verticalFittingPriority:(UILayoutPriority)verticalFittingPriority {
+    CGSize size = [super systemLayoutSizeFittingSize:targetSize withHorizontalFittingPriority:horizontalFittingPriority verticalFittingPriority:verticalFittingPriority];
+    [self.dynamicView.collectionView layoutIfNeeded];
+    CGFloat height = self.dynamicView.collectionView.collectionViewLayout.collectionViewContentSize.height;
+    return CGSizeMake(size.width, height + size.height);
+}
+
 - (instancetype)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
     if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
         [self setupSubViews];
@@ -34,14 +41,14 @@
         
     [self.titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.mas_equalTo(self.contentView.mas_left).mas_offset(20.0);
-        make.top.mas_equalTo(self.contentView.mas_top).mas_offset(20.0);
-		make.height.equalTo(@(30));
+        make.right.lessThanOrEqualTo(self.contentView.mas_right).offset(-20);
+        make.top.mas_equalTo(self.contentView.mas_top).mas_offset(10.0);
     }];
     
     [self.dynamicView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.mas_equalTo(self.contentView);
-		make.top.mas_equalTo(self.titleLabel.mas_bottom).offset(10.0);  //.priorityHigh();
-		make.bottom.mas_equalTo(self.contentView.mas_bottom); //.priorityHigh();
+        make.top.equalTo(self.titleLabel.mas_bottom).offset(10);
+		make.bottom.mas_equalTo(self.contentView.mas_bottom);
     }];
 	
 	_hasSec = YES;

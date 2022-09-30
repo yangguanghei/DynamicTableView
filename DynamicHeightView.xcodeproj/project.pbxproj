@@ -144,6 +144,21 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A18EA14E27F7DEDA00E3B657 /* table+collection */ = {
+			isa = PBXGroup;
+			children = (
+				B0AFAC83255E5C1D00497829 /* DynamicTableViewCell.h */,
+				B0AFAC84255E5C1D00497829 /* DynamicTableViewCell.m */,
+				B0AFACBC255E60B300497829 /* DynamicView.h */,
+				B0AFACBD255E60B300497829 /* DynamicView.m */,
+				B0AFAC8F255E5C7500497829 /* DynamicCollectionView.h */,
+				B0AFAC90255E5C7500497829 /* DynamicCollectionView.m */,
+				B0AFAC89255E5C2F00497829 /* DynamicCollectionViewCell.h */,
+				B0AFAC8A255E5C2F00497829 /* DynamicCollectionViewCell.m */,
+			);
+			path = "table+collection";
+			sourceTree = "<group>";
+		};
 		B0AFAC3C255E5BBC00497829 = {
 			isa = PBXGroup;
 			children = (
@@ -175,6 +190,7 @@
 				B0AFAC49255E5BBC00497829 /* AppDelegate.m */,
 				B0AFAC4E255E5BBC00497829 /* ViewController.h */,
 				B0AFAC4F255E5BBC00497829 /* ViewController.m */,
+				A18EA14E27F7DEDA00E3B657 /* table+collection */,
 				184ADC7225676FA800F8B441 /* ListViewController.h */,
 				184ADC7325676FA800F8B441 /* ListViewController.m */,
 				18430E932645343700CE6209 /* SizeFittingViewController.h */,
@@ -186,14 +202,6 @@
 				1876537D25909DF000A18FDA /* SomeCellDynamic */,
 				184ADC782567749D00F8B441 /* ListTableView.h */,
 				184ADC792567749D00F8B441 /* ListTableView.m */,
-				B0AFAC83255E5C1D00497829 /* DynamicTableViewCell.h */,
-				B0AFAC84255E5C1D00497829 /* DynamicTableViewCell.m */,
-				B0AFACBC255E60B300497829 /* DynamicView.h */,
-				B0AFACBD255E60B300497829 /* DynamicView.m */,
-				B0AFAC8F255E5C7500497829 /* DynamicCollectionView.h */,
-				B0AFAC90255E5C7500497829 /* DynamicCollectionView.m */,
-				B0AFAC89255E5C2F00497829 /* DynamicCollectionViewCell.h */,
-				B0AFAC8A255E5C2F00497829 /* DynamicCollectionViewCell.m */,
 				B0AFAC51255E5BBC00497829 /* Main.storyboard */,
 				B0AFAC54255E5BBE00497829 /* Assets.xcassets */,
 				B0AFAC56255E5BBE00497829 /* LaunchScreen.storyboard */,

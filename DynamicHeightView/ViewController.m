@@ -65,9 +65,9 @@ static NSString *identify = @"DynamicTableViewCell";
 
 #pragma mark - UITableViewDelegate
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return tableView.rowHeight;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return tableView.rowHeight;
+//}
 
 #pragma mark - getter
 
@@ -77,8 +77,8 @@ static NSString *identify = @"DynamicTableViewCell";
         _tableView.backgroundColor = UIColor.whiteColor;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.rowHeight = UITableViewAutomaticDimension;
-        _tableView.estimatedRowHeight = 100.0f;
+//        _tableView.rowHeight = UITableViewAutomaticDimension;
+        _tableView.estimatedRowHeight = 300.0f;
         _tableView.estimatedSectionHeaderHeight = 0.0;
         _tableView.estimatedSectionFooterHeight = 0.0;
         [_tableView registerClass:[DynamicTableViewCell class] forCellReuseIdentifier:identify];

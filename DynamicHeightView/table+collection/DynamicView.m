@@ -29,26 +29,26 @@ static NSString *identify = @"DynamicCollectionViewCell";
     [self addSubview:self.collectionView];
     [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.left.right.top.bottom.mas_equalTo(self);
+//        make.height.equalTo(@(0));
     }];
 	
 	self.collectionView.backgroundColor = [UIColor greenColor];
-	[self.collectionView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
+    
+//    [self.collectionView addObserver:self forKeyPath:@"contentSize" options:NSKeyValueObservingOptionNew context:nil];
 }
+
+//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
+//    if ([keyPath isEqualToString:@"contentSize"]) {
+//        CGFloat height = self.collectionView.contentSize.height;
+//        [self.collectionView mas_updateConstraints:^(MASConstraintMaker *make) {
+//            make.height.equalTo(@(height));
+//        }];
+//    }
+//}
 
 - (void)setDataArr:(NSArray *)dataArr{
 	_dataArr = dataArr;
 	[self.collectionView reloadData];
-	[self.collectionView layoutIfNeeded];
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context{
-	if ([keyPath isEqualToString:@"contentSize"]) {
-		CGFloat height = self.collectionView.contentSize.height;
-		[self.collectionView mas_remakeConstraints:^(MASConstraintMaker *make) {
-			make.left.right.top.bottom.mas_equalTo(self);
-			make.height.equalTo(@(height));
-		}];
-	}
 }
 
 #pragma mark - UICollectionViewDataSource
@@ -60,17 +60,11 @@ static NSString *identify = @"DynamicCollectionViewCell";
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     DynamicCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identify forIndexPath:indexPath];
     cell.title = self.dataArr[indexPath.row];
+    cell.contentView.backgroundColor = [UIColor redColor];
     return cell;
 }
 
 #pragma mark - UICollectionViewDelegate
-
-- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView
-                        layout:(UICollectionViewLayout *)collectionViewLayout
-        insetForSectionAtIndex:(NSInteger)section {
-    return UIEdgeInsetsMake(15.0, 15.0, 15.0, 15.0);
-}
-
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     return CGSizeMake(60.0, 60.0);
@@ -89,8 +83,8 @@ static NSString *identify = @"DynamicCollectionViewCell";
 - (DynamicCollectionView *)collectionView {
     if (!_collectionView) {
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
-        layout.minimumLineSpacing = 20.0;
-        layout.minimumInteritemSpacing = 0.0;
+        layout.minimumLineSpacing = 10.0;
+        layout.minimumInteritemSpacing = 10.0;
         layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         _collectionView = [[DynamicCollectionView alloc] initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.backgroundColor = [UIColor whiteColor];

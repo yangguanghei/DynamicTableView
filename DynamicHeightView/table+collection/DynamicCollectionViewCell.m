@@ -44,7 +44,6 @@
     if (!_titleLabel) {
         _titleLabel = [[UILabel alloc] init];
         _titleLabel.textColor = [UIColor blueColor];
-        _titleLabel.backgroundColor = [UIColor orangeColor];
         _titleLabel.textAlignment = NSTextAlignmentCenter;
         _titleLabel.font = [UIFont systemFontOfSize:15 weight:UIFontWeightRegular];
     }

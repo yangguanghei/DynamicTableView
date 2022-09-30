@@ -57,7 +57,7 @@
 //}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-	return 5;
+	return 3;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -72,7 +72,7 @@
 		_tableView.backgroundColor = UIColor.whiteColor;
 		_tableView.delegate = self;
 		_tableView.dataSource = self;
-		_tableView.estimatedRowHeight = 1;
+		_tableView.estimatedRowHeight = 40;
 //		_tableView.rowHeight = UITableViewAutomaticDimension;
 //		_tableView.sectionHeaderHeight = 0.0;
 //		_tableView.sectionFooterHeight = 0.0;
